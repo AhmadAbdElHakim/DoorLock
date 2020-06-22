@@ -1,0 +1,1 @@
+"./EEPROM.obj" "./IO_ports.obj" "./KeyPad.obj" "./LCD.obj" "./main.obj" "./timer.obj" "./tm4c123ge6pm_startup_ccs.obj" "./uart.obj" "../tm4c123ge6pm.cmd" -llibc.a 

@@ -1,0 +1,183 @@
+******************************************************************************
+                  TI ARM Linker Unix v20.2.0                   
+******************************************************************************
+>> Linked Wed May 27 17:32:44 2020
+
+OUTPUT FILE NAME:   <DoorLock.out>
+ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 00000b65
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00020000  00000bb4  0001f44c  R  X
+  SRAM                  20000000   00008000  00000200  00007e00  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00000bb4   00000bb4    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    00000938   00000938    r-x .text
+  00000ba4    00000ba4    00000010   00000010    r-- .const
+20000000    20000000    00000200   00000000    rw-
+  20000000    20000000    00000200   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     tm4c123ge6pm_startup_ccs.obj (.intvecs)
+
+.text      0    0000026c    00000938     
+                  0000026c    00000468     main.obj (.text)
+                  000006d4    00000240     LCD.obj (.text)
+                  00000914    00000188     KeyPad.obj (.text)
+                  00000a9c    000000c8     EEPROM.obj (.text)
+                  00000b64    0000002c     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.text:_c_int00_noinit_noargs:_c_int00_noinit_noargs)
+                  00000b90    0000000c     tm4c123ge6pm_startup_ccs.obj (.text)
+                  00000b9c    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  00000ba0    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.const     0    00000ba4    00000010     
+                  00000ba4    00000010     main.obj (.const:$P$T0$1)
+
+.cinit     0    00000000    00000000     UNINITIALIZED
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.stack     0    20000000    00000200     UNINITIALIZED
+                  20000000    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  20000004    000001fc     --HOLE--
+
+__llvm_prf_cnts 
+*          0    20000000    00000000     UNINITIALIZED
+
+MODULE SUMMARY
+
+       Module                         code   ro data   rw data
+       ------                         ----   -------   -------
+    ./
+       main.obj                       1128   16        0      
+       tm4c123ge6pm_startup_ccs.obj   12     620       0      
+       LCD.obj                        576    0         0      
+       KeyPad.obj                     392    0         0      
+       EEPROM.obj                     200    0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         2308   636       0      
+                                                              
+    /home/ahmad/ti/ccs1000/ccs/tools/compiler/ti-cgt-arm_20.2.0.LTS/lib/rtsv7M4_T_le_v4SPD16_eabi.lib
+       boot_cortex_m.c.obj            44     0         0      
+       exit.c.obj                     4      0         0      
+       pre_init.c.obj                 4      0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         52     0         0      
+                                                              
+       Stack:                         0      0         512    
+    +--+------------------------------+------+---------+---------+
+       Grand Total:                   2360   636       512    
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                      
+-------   ----                      
+00000ba1  C$$EXIT                   
+00000a9f  EEPROM_init               
+00000b31  EEPROM_read               
+00000b15  EEPROM_write              
+00000915  KeyPad_4x3_adjustKeyNumber
+00000947  KeyPad_getPressedKey      
+000009cf  KeyPad_init               
+000008c7  LCD_clearScreen           
+0000080b  LCD_command               
+0000083f  LCD_data                  
+00000883  LCD_displayString         
+00000751  LCD_init                  
+00000b91  ResetISR                  
+00000a9d  SystemInit                
+20000200  __STACK_END               
+00000200  __STACK_SIZE              
+20000200  __STACK_TOP               
+ffffffff  __TI_pprof_out_hndl       
+ffffffff  __TI_prof_data_size       
+ffffffff  __TI_prof_data_start      
+00000000  __TI_static_base__        
+ffffffff  __binit__                 
+ffffffff  __c_args__                
+UNDEFED   __mpu_init                
+20000000  __stack                   
+20000000  __start___llvm_prf_cnts   
+20000000  __stop___llvm_prf_cnts    
+00000b65  _c_int00_noinit_noargs    
+00000b9d  _system_pre_init          
+00000ba1  abort                     
+000004a5  arrtodecimal              
+ffffffff  binit                     
+000004f5  decimaltoarr              
+000006d5  delayMs                   
+00000717  delayUs                   
+00000000  g_pfnVectors              
+0000026d  initportf                 
+000008b3  intgerToString            
+000002cf  main                      
+000005cd  setnewpassword            
+UNDEFED   sysTick_delayMs           
+00000565  validatepassword          
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                      
+-------   ----                      
+00000000  __TI_static_base__        
+00000000  g_pfnVectors              
+00000200  __STACK_SIZE              
+0000026d  initportf                 
+000002cf  main                      
+000004a5  arrtodecimal              
+000004f5  decimaltoarr              
+00000565  validatepassword          
+000005cd  setnewpassword            
+000006d5  delayMs                   
+00000717  delayUs                   
+00000751  LCD_init                  
+0000080b  LCD_command               
+0000083f  LCD_data                  
+00000883  LCD_displayString         
+000008b3  intgerToString            
+000008c7  LCD_clearScreen           
+00000915  KeyPad_4x3_adjustKeyNumber
+00000947  KeyPad_getPressedKey      
+000009cf  KeyPad_init               
+00000a9d  SystemInit                
+00000a9f  EEPROM_init               
+00000b15  EEPROM_write              
+00000b31  EEPROM_read               
+00000b65  _c_int00_noinit_noargs    
+00000b91  ResetISR                  
+00000b9d  _system_pre_init          
+00000ba1  C$$EXIT                   
+00000ba1  abort                     
+20000000  __stack                   
+20000000  __start___llvm_prf_cnts   
+20000000  __stop___llvm_prf_cnts    
+20000200  __STACK_END               
+20000200  __STACK_TOP               
+ffffffff  __TI_pprof_out_hndl       
+ffffffff  __TI_prof_data_size       
+ffffffff  __TI_prof_data_start      
+ffffffff  __binit__                 
+ffffffff  __c_args__                
+ffffffff  binit                     
+UNDEFED   __mpu_init                
+UNDEFED   sysTick_delayMs           
+
+[42 symbols]
